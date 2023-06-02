@@ -4,10 +4,24 @@ body {
     text-shadow: 2px 2px 2px #000;
     color:rgb(236, 225, 210);
 }
-  
+
+.header {
+    margin-left: 40px;
+    font-size: 40px;
+    margin-bottom: -10px;
+}
+
+hr {
+    height: 15px;
+    width: 99%;
+    background-color:rgb(200, 229, 155);
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
   .game {
-    margin: 0px;
-    padding-left: 0px;
+
     display: flex;
     justify-content: center;
 }
@@ -50,4 +64,5 @@ canvas {
 .speedTip {
     text-align: center;
     font-size: 30px;
+    color: #ee9696;
 }

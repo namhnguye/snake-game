@@ -22,7 +22,7 @@ let yMovement = 0
 
 
 function drawApple() {  
-    context.fillStyle = "#ff0000"  
+    context.fillStyle = "#ee9696"  
     context.fillRect(appleX, appleY, nodeSize, nodeSize) 
 }
 
