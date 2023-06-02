@@ -1,6 +1,9 @@
 const canvas = document.getElementById('game') 
 const context = canvas.getContext('2d') 
 
+const eatSound = new Audio('sounds/eat.mp3')
+const loseSound = new Audio('sounds/lose.mp3')
+
 const scoreCount = document.getElementById('score')
 let score = 0 
 scoreCount.textContent = score 
@@ -78,7 +81,7 @@ function eat() {
                 }
             }
         }
-
+        eatSound.play()
         tailLength++;
         score++;
         scoreCount.textContent = score;
@@ -149,6 +152,7 @@ function checkGameEnded() {
         }
     }
 
+    // update highscore value
     scores.push(score)
     for (const score of scores) {
         if (score > highScore) {
@@ -181,6 +185,7 @@ function resetGame() {
 function drawGame() {
     let gameEnded = false
     if (checkGameEnded(gameEnded)) {
+        loseSound.play()
         setTimeout(() => {
             clearScreen()
         }, 500)
