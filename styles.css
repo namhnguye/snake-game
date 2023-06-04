@@ -63,10 +63,23 @@ canvas {
     border: solid 4px rgb(236, 225, 210);
     border-radius: 10px;
     text-align: center;
+    color: #ee9696;
 }
 
 .speedTip {
     text-align: center;
     font-size: 30px;
+    color: #ee9696;
+}
+
+.namScore {
+    text-align: center;
+    margin-top: -15px;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+.speedScore {
+    font-weight: bold;
     color: #ee9696;
 }

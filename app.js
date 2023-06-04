@@ -212,10 +212,12 @@ speedSelect.addEventListener('change', () => {
 
 function changeSpeed() {
     clearInterval(speedInterval)
-    if (speed == 'normal') {
+    if (speed == 'slow') {
         speedInterval = setInterval(drawGame, 1000 / 7)  
-    } else { // speed == 'fast'
+    } else if (speed == 'normal') { 
         speedInterval = setInterval(drawGame, 1000 / 10) 
+    } else { // speed == 'fast'
+        speedInterval = setInterval(drawGame, 1000 / 15)
     }
 }
 
