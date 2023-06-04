@@ -3,9 +3,11 @@ const context = canvas.getContext('2d')
 
 const eatSound = new Audio('sounds/eat.mp3')
 const loseSound = new Audio('sounds/lose.mp3')
+loseSound.volume = 0.5
+const winSound = new Audio('sounds/finish.mp3')
 
 const scoreCount = document.getElementById('score')
-let score = 0 
+let score = 0
 scoreCount.textContent = score 
 
 const highScoreCount = document.getElementById('highScore')
@@ -124,6 +126,7 @@ function changeSnakePosition() {
 
 
 let scores = []
+
 function checkGameEnded() {
 
     // hit left wall
@@ -147,7 +150,7 @@ function checkGameEnded() {
     }
 
     for (let i = 0; i < tail.length; i++) {
-        if (headX == tail[i].x && headY == tail[i].y && tailLength > 2) {
+        if (headX == tail[i].x && headY == tail[i].y && tailLength > 98) {
             return true 
         }
     }
@@ -182,16 +185,26 @@ function resetGame() {
     }, 1000)
 }
 
+function prepReset(gameEnded) {
+    setTimeout(() => {
+        clearScreen()
+    }, 500)
+    highScoreCount.textContent = highScore
+    resetGame()
+    gameEnded = false
+}
+
 function drawGame() {
     let gameEnded = false
     if (checkGameEnded(gameEnded)) {
-        loseSound.play()
-        setTimeout(() => {
-            clearScreen()
-        }, 500)
-        highScoreCount.textContent = highScore
-        resetGame()
-        gameEnded = false
+        if (tailLength >= 97) {
+            highScoreCount.classList.add('winScoreText')
+            winSound.play()
+            prepReset(gameEnded)
+        } else {
+             loseSound.play()
+             prepReset(gameEnded)
+        }
     } else {
         clearScreen() 
         drawSnake() 
