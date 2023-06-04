@@ -235,6 +235,12 @@ function changeSpeed() {
     }
 }
 
+speedSelect.addEventListener('keydown', function(event) {
+    if (event.key.includes('Arrow')) {
+      event.preventDefault();
+    }
+  });
+
 
 // stop arrow keys from moving page if window isn't fullscreen
 window.addEventListener("keydown", function(e) {

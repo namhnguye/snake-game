@@ -46,12 +46,18 @@ canvas {
 .scoreBox {
     gap: 100px;
     padding-top: 20px;
-    margin-bottom: -10px;
+    margin-bottom: -20px;
+}
+
+.score97 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: -25px;
 }
 
 .speedDiv {
     gap: 20px;
-    margin-bottom: -50px;
+    margin-bottom: -20px;
 }
 
 .speed {
@@ -63,12 +69,6 @@ canvas {
     border: solid 4px rgb(236, 225, 210);
     border-radius: 10px;
     text-align: center;
-    color: #ee9696;
-}
-
-.speedTip {
-    text-align: center;
-    font-size: 30px;
     color: #ee9696;
 }
 
