@@ -59,7 +59,7 @@ function drawSnake() {
     }
     
     // draw the head
-    context.fillStyle = '#23b623' 
+    context.fillStyle = '#8dd42b' 
     context.fillRect(headX, headY, nodeSize, nodeSize) 
     changeSnakePosition() 
 }
