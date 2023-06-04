@@ -200,11 +200,12 @@ function drawGame() {
     }
 }
 
-// the speed on load is normal - 1000 / 7
-let speedInterval = setInterval(drawGame, 1000 / 7)
+// create the game, default to normal speed
+let speedInterval = setInterval(drawGame, 1000 / 10)
+
+let speed = 'normal' 
 
 const speedSelect = document.getElementById('speed')
-let speed = 'normal' 
 speedSelect.addEventListener('change', () => {
     speed = speedSelect.value
     changeSpeed()
@@ -222,4 +223,10 @@ function changeSpeed() {
 }
 
 
+// stop arrow keys from moving page if window isn't fullscreen
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
 
