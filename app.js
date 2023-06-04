@@ -150,7 +150,7 @@ function checkGameEnded() {
     }
 
     for (let i = 0; i < tail.length; i++) {
-        if (headX == tail[i].x && headY == tail[i].y && tailLength > 98) {
+        if (headX == tail[i].x && headY == tail[i].y && tailLength > 2) {
             return true 
         }
     }
