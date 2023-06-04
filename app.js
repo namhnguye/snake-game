@@ -235,6 +235,8 @@ function changeSpeed() {
     }
 }
 
+
+// stop arrow keys from changing speed
 speedSelect.addEventListener('keydown', function(event) {
     if (event.key.includes('Arrow')) {
       event.preventDefault();
