@@ -182,7 +182,7 @@ function drawGrid() {
     }
 }
 
-let gridLinesShowed = true
+let gridLinesShowed = false
 let gridButton = document.getElementById('gridLines')
 gridButton.addEventListener("click", () => {
         gridLinesShowed = !gridLinesShowed
