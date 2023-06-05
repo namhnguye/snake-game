@@ -23,6 +23,7 @@ hr {
 h2 {
     text-align: center;
     font-size: 30px;
+    margin-top: -10px;
 }
 
 .game {
@@ -33,7 +34,7 @@ h2 {
 canvas {
     border: solid 5px #e2adad;
     color: #5a5959;
-
+    margin-top: -10px;
 }
 
 .scoreSpeed {
@@ -45,36 +46,55 @@ canvas {
 
 .scoreBox {
     gap: 100px;
-    padding-top: 20px;
+    padding-top: 10px;
     margin-bottom: -20px;
 }
 
-.score97 {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: -25px;
-}
-
-.speedDiv {
-    gap: 20px;
+.speedGridDiv {
+    gap: 40px;
     margin-bottom: -20px;
 }
 
-.speed {
+.selectAndButton {
     font-size: 50px;
     background-color: rgb(161, 212, 151);
-    color:rgb(236, 225, 210);
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
     text-shadow: 2px 2px 2px #000;
     border: solid 4px rgb(236, 225, 210);
     border-radius: 10px;
     text-align: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.selectAndButton:hover {
+    background-color: rgb(134, 196, 126);
+}
+
+.speed {
     color: #ee9696;
+}
+
+.speedChoices {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.gridButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridLines {
+    color:rgb(236, 225, 210);
+    font-size: 40px;
 }
 
 .namScore {
     text-align: center;
-    margin-top: -15px;
+    margin-top: 15px;
     font-size: 30px;
     margin-bottom: 0px;
 }

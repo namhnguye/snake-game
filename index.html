@@ -10,7 +10,7 @@
 <body>
     <h1 class="header">Nam snake game</h1>
     <hr>
-    <h2>wasd or arrow keys</h2>
+    <h2>wasd or arrow keys - score <b>97</b> to win</h2>
     <div class="game">
         <canvas id="game" width="400" height="400">
     </div>
@@ -18,15 +18,20 @@
         <div class="score">score: <span id="score"></span></div>
         <div class="score">high score: <span id="highScore"></span></div>
     </div>
-    <p class="score97">score <b>97</b> to win</p>
-    <div class="speedDiv scoreSpeed">
-        <p>choose speed: </p>
-        <select class="speed" id="speed">
-            <option value="slow">slow</option>
-            <option value="normal" selected="selected">normal</option>
-            <option value="fast">fast</option>
-        </select>
+    <div class="speedGridDiv scoreSpeed">
+        <div class="speedChoices">        
+            <p>choose speed: </p>
+            <select class="speed selectAndButton" id="speed">
+                <option value="slow">slow</option>
+                <option value="normal" selected="selected">normal</option>
+                <option value="fast">fast</option>
+            </select>
+        </div>
     </div>
+    <div class="gridButton">    
+        <button class="gridLines selectAndButton" id="gridLines">show grid lines</button>
+    </div>
+
     <p class="namScore">nam's high score: <span class="namSpeedScore">fast</span> - 24</p>
 
     <script src="app.js"></script>

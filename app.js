@@ -165,9 +165,36 @@ function checkGameEnded() {
 }
 
 
+// draw the grid lines
+function drawGrid() {
+    context.strokeStyle = 'rgba(72, 210, 45, 0.20)'
+    for (let startX = 39; startX <= 400; startX += 40) {
+        context.beginPath()
+        context.moveTo(startX, 0)
+        context.lineTo(startX, 400)
+        context.stroke()
+    }
+    for (let startY = 39; startY <= 400; startY += 40) {
+        context.beginPath()
+        context.moveTo(0, startY)
+        context.lineTo(400, startY)
+        context.stroke()
+    }
+}
+
+let gridLinesShowed = true
+let gridButton = document.getElementById('gridLines')
+gridButton.addEventListener("click", () => {
+        gridLinesShowed = !gridLinesShowed
+    }
+)
+
 function clearScreen() { 
     context.fillStyle = '#ebf3e2' 
     context.fillRect(0, 0, canvas.width, canvas.height) 
+    if (gridLinesShowed) {
+        drawGrid()
+    }
 }
 
 function resetGame() {
