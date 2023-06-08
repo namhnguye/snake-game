@@ -155,11 +155,13 @@ function checkGameEnded() {
         }
     }
 
-    // update highscore value
-    scores.push(score)
-    for (const score of scores) {
-        if (score > highScore) {
-            highScore = score
+    // update highscore value only for fast speed
+    if (speed == 'fast') {
+        scores.push(score)
+        for (const score of scores) {
+            if (score > highScore) {
+                highScore = score
+            }
         }
     }
 }
@@ -216,7 +218,9 @@ function prepReset(gameEnded) {
     setTimeout(() => {
         clearScreen()
     }, 500)
-    highScoreCount.textContent = highScore
+    if (highScore != 0) {
+        highScoreCount.textContent = highScore
+    }
     resetGame()
     gameEnded = false
 }
@@ -224,7 +228,8 @@ function prepReset(gameEnded) {
 function drawGame() {
     let gameEnded = false
     if (checkGameEnded(gameEnded)) {
-        if (tailLength >= 97) {
+        // if score is 28 then tail is 30 long, player wins
+        if (tailLength >= 30 && speed == 'fast') {
             highScoreCount.classList.add('winScoreText')
             winSound.play()
             prepReset(gameEnded)
@@ -240,10 +245,10 @@ function drawGame() {
     }
 }
 
-// create the game, default to normal speed
-let speedInterval = setInterval(drawGame, 1000 / 10)
+// create the game, default to fast speed
+let speedInterval = setInterval(drawGame, 1000 / 15)
 
-let speed = 'normal' 
+let speed = 'fast' 
 
 const speedSelect = document.getElementById('speed')
 speedSelect.addEventListener('change', () => {
