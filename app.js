@@ -247,18 +247,16 @@ function drawGame() {
 }
 
 
-// creating the game canvas
-if (localStorage.getItem('highScore') !== null) {        // if there is a saved high score, load it and then draw the game
+// check for a previous highscore aend load it if so
+if (localStorage.getItem('highScore') !== null) {        
     let highScore = localStorage.getItem('highScore')
     scores.push(highScore)
     highScoreCount.textContent = highScore
-    let speedInterval = setInterval(drawGame, 1000 / 15)
-} else {                                                 // if there is no saved high score, just draw the game
-    let speedInterval = setInterval(drawGame, 1000 / 15)
-    }
+}
 
+// draw the game and initalize to fast speed
 let speed = 'fast' 
-
+let speedInterval = setInterval(drawGame, 1000 / 15)
 const speedSelect = document.getElementById('speed')
 speedSelect.addEventListener('change', () => {
     speed = speedSelect.value
@@ -271,7 +269,7 @@ function changeSpeed() {
         speedInterval = setInterval(drawGame, 1000 / 7)  
     } else if (speed == 'normal') { 
         speedInterval = setInterval(drawGame, 1000 / 10) 
-    } else { // speed == 'fast'
+    } else if (speed == 'fast') { 
         speedInterval = setInterval(drawGame, 1000 / 15)
     }
 }
