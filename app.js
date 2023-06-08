@@ -161,6 +161,7 @@ function checkGameEnded() {
         for (const score of scores) {
             if (score > highScore) {
                 highScore = score
+                localStorage.setItem('highScore', highScore)
             }
         }
     }
@@ -218,7 +219,7 @@ function prepReset(gameEnded) {
     setTimeout(() => {
         clearScreen()
     }, 500)
-    if (highScore != 0) {
+    if (speed == 'fast') {
         highScoreCount.textContent = highScore
     }
     resetGame()
@@ -245,8 +246,16 @@ function drawGame() {
     }
 }
 
-// create the game, default to fast speed
-let speedInterval = setInterval(drawGame, 1000 / 15)
+
+// creating the game canvas
+if (localStorage.getItem('highScore') !== null) {        // if there is a saved high score, load it and then draw the game
+    let highScore = localStorage.getItem('highScore')
+    scores.push(highScore)
+    highScoreCount.textContent = highScore
+    let speedInterval = setInterval(drawGame, 1000 / 15)
+} else {                                                 // if there is no saved high score, just draw the game
+    let speedInterval = setInterval(drawGame, 1000 / 15)
+    }
 
 let speed = 'fast' 
 
@@ -271,15 +280,14 @@ function changeSpeed() {
 // stop arrow keys from changing speed
 speedSelect.addEventListener('keydown', function(event) {
     if (event.key.includes('Arrow')) {
-      event.preventDefault();
+      event.preventDefault()
     }
-  });
+  })
 
 
 // stop arrow keys from moving page if window isn't fullscreen
-window.addEventListener("keydown", function(e) {
-    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
-        e.preventDefault();
+window.addEventListener("keydown", function(event) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(event.code) > -1) {
+        event.preventDefault()
     }
-}, false);
-
+}, false)
