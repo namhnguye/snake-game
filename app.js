@@ -252,6 +252,9 @@ if (localStorage.getItem('highScore') !== null) {
     let highScore = localStorage.getItem('highScore')
     scores.push(highScore)
     highScoreCount.textContent = highScore
+    if (highScore >= 28) {
+        highScore.classList.add('winScoreText')
+    }
 }
 
 // draw the game and initalize to fast speed
