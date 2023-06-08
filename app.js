@@ -252,8 +252,8 @@ if (localStorage.getItem('highScore') !== null) {
     let highScore = localStorage.getItem('highScore')
     scores.push(highScore)
     highScoreCount.textContent = highScore
-    if (highScore >= 28) {
-        highScore.classList.add('winScoreText')
+    if (parseInt(highScore) >= 28) {
+        highScoreCount.classList.add('winScoreText')
     }
 }
 
