@@ -249,10 +249,10 @@ function drawGame() {
 
 // check for a previous highscore aend load it if so
 if (localStorage.getItem('highScore') !== null) {        
-    let highScore = localStorage.getItem('highScore')
+    let highScore = parseInt(localStorage.getItem('highScore'))
     scores.push(highScore)
     highScoreCount.textContent = highScore
-    if (parseInt(highScore) >= 28) {
+    if (highScore >= 28) {
         highScoreCount.classList.add('winScoreText')
     }
 }
