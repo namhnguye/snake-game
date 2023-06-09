@@ -16,4 +16,4 @@ if you get a score of 28 or higher on fast you win and get a special effect for 
 **[Link to game](https://namhnguye.github.io/snake-game/)**
 \
 \
-![screenshot of game](screenshot.png)
+![screenshot of game](preview.gif)
