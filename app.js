@@ -45,7 +45,7 @@ class snakePart {
 
 function drawSnake() {
 
-    context.fillStyle ="#adff2f" 
+    context.fillStyle ="#BEE5B0" 
     
     // draw every node in the tail array
     for (let i = 0; i < tail.length; i++) {
@@ -59,7 +59,7 @@ function drawSnake() {
     }
     
     // draw the head
-    context.fillStyle = '#8dd42b' 
+    context.fillStyle = '#9FC192' 
     context.fillRect(headX, headY, nodeSize, nodeSize) 
     changeSnakePosition() 
 }
@@ -170,7 +170,7 @@ function checkGameEnded() {
 
 // draw the grid lines
 function drawGrid() {
-    context.strokeStyle = 'rgba(72, 210, 45, 0.20)'
+    context.strokeStyle = '#ABCC9F'
     for (let startX = 39; startX <= 400; startX += 40) {
         context.beginPath()
         context.moveTo(startX, 0)
@@ -193,7 +193,7 @@ gridButton.addEventListener("click", () => {
 )
 
 function clearScreen() { 
-    context.fillStyle = '#ebf3e2' 
+    context.fillStyle = '#ECECCC' 
     context.fillRect(0, 0, canvas.width, canvas.height) 
     if (gridLinesShowed) {
         drawGrid()
